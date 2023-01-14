@@ -1,0 +1,31 @@
+\documentclass[a4paper,10pt, twoside, openright, notitlepage]{report}
+\usepackage{float}
+\usepackage{amsmath,latexsym,amsthm,amssymb,amsfonts,amscd,stmaryrd,textcomp}
+\usepackage[left=4.5cm, right=3.5cm]{geometry}
+\usepackage[absolute]{textpos}
+\usepackage{blindtext}
+\usepackage{helvet}
+\usepackage{color}
+\usepackage{amsthm, amssymb}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{pst-intersect}
+\usepackage{tkz-euclide}
+\usepackage{pgfplots}
+\begin{document}
+For the following polynomial perform one step of interval constraint propagation using Newton's Method. 
+
+The given starting interval will be $[0;4]$ and sample point $s = 2 $. The given polynomial is: 
+$f = x^3 - x^2 - 10x - 8$, with 
+$ f(s) = -24$.
+The set of derivatives in $f$ is: 
+\begin{center}
+$f'(A) = [1;1]\cdot [3;3]\cdot[0;16] - [1;1]\cdot [2;2]\cdot[0;4] - [10;10]\cdot [1;1] = [-18;38] $.
+\end{center}The set of possible zeros in A: 
+\begin{center}
+$ s-\frac{f(s)}{f'(A)} = [2;2] - \frac{[-24;-24]}{[-18;38]} = (-inf;0.666667] \cup [2.63158;inf)$.
+\end{center}The new contracted interval $A'$  will be: 
+\begin{center}
+$A' = [0;4] \cap ((-inf;0.666667] \cup [2.63158;inf))
+ = [0;0.666667] \cup [2.63158;4]$
+\end{center}\end{document}

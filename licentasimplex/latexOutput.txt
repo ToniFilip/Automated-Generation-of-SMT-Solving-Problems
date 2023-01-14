@@ -1,0 +1,86 @@
+\documentclass[a4paper,10pt, twoside, openright, notitlepage]{report}
+\usepackage{float}
+\usepackage{amsmath,latexsym,amsthm,amssymb,amsfonts,amscd,stmaryrd,textcomp}
+\usepackage[left=4.5cm, right=3.5cm]{geometry}
+\usepackage[absolute]{textpos}
+\usepackage{blindtext}
+\usepackage{helvet}
+\usepackage{color}
+\usepackage{amsthm, amssymb}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{pst-intersect}
+\usepackage{tkz-euclide}
+\usepackage{pgfplots}
+\begin{document}
+Given is the following initial tableau. Bring the tableau to a standard form and find a solution. The ordering for choosing a pivot candidate should be $x_1 > x_2 > s_1 > s_2.$\begin{table}[H]
+\begin{tabular}{ |p{2cm}||p{2cm}|p{2cm}|p{2cm}| }
+\hline
+Constraint& $x_1$ & $x_2$ & bound\\
+\hline
+Assignment  &       0 &       0 &       0\\
+
+$f_1$  &       2 &       1 &       4\\
+
+$f_2$  &      -1 &      -1 &       5\\
+
+
+\hline
+\end{tabular}
+\end{table}
+Tableau after adding the slack variables: 
+\begin{table}[H]
+\begin{tabular}{ |p{2cm}||p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}| }
+\hline
+Constraint& $x_1$ & $x_2$ & $s_1$ & $s_2$ & bound\\
+\hline
+Assignment  &       0 &       0 &       0 &       0 &       0\\
+
+$f_1$  &       2 &       1 &       1 &       0 &       4\\
+
+$f_2$  &      -1 &      -1 &       0 &       1 &       5\\
+
+
+\hline
+\end{tabular}
+\end{table}
+Slack variable with number 1 needs to be pivoted, because $0 < 4$.
+Variable $x_1$ is suitable for pivoting with coefficient $2.$
+The new location of slack variable with number $1$ is $1.$
+
+\begin{table}[H]
+\begin{tabular}{ |p{2cm}||p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}| }
+\hline
+Constraint& $s_1$ & $x_2$ & $x_1$ & $s_2$ & bound\\
+\hline
+Assignment  &       4 &       0 &       2 &      -2 &       0\\
+
+$f_1$  &    0.50 &   -0.50 &       1 &       0 &       4\\
+
+$f_2$  &   -0.50 &   -0.50 &       0 &       1 &       5\\
+
+
+\hline
+\end{tabular}
+\end{table}
+Slack variable with number 2 needs to be pivoted, because $-2 < 5$.
+Variable $x_2$ is suitable for pivoting with coefficient $-0.5.$
+The new location of slack variable with number $2$ is $2.$
+
+\begin{table}[H]
+\begin{tabular}{ |p{2cm}||p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}| }
+\hline
+Constraint& $s_1$ & $s_2$ & $x_1$ & $x_2$ & bound\\
+\hline
+Assignment  &       4 &       5 &       9 &     -14 &       0\\
+
+$f_1$  &       1 &       1 &       1 &       0 &       4\\
+
+$f_2$  &      -1 &      -2 &       0 &       1 &       5\\
+
+
+\hline
+\end{tabular}
+\end{table}
+No slack variable is violating the bound. We are done. The current assignments constitute a solution.
+\end{document}

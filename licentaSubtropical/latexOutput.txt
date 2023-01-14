@@ -1,0 +1,63 @@
+\documentclass[a4paper,10pt, twoside, openright, notitlepage]{report}
+\usepackage{float}
+\usepackage{amsmath,latexsym,amsthm,amssymb,amsfonts,amscd,stmaryrd,textcomp}
+\usepackage[left=4.5cm, right=3.5cm]{geometry}
+\usepackage[absolute]{textpos}
+\usepackage{blindtext}
+\usepackage{helvet}
+\usepackage{color}
+\usepackage{amsthm, amssymb}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{pst-intersect}
+\usepackage{tkz-euclide}
+\usepackage{pgfplots}
+\begin{document}
+For the following polynomial $f$ over the real domain and constraint, find the solution set for a hyperplane separating a positive frame $p$ from the rest of the $frame(f)$:
+The polynom and its bound are: 
+\begin{center}
+$0 = 2 x^2y + 4 x^4y^3 - 3x^3y^4$\end{center}
+\begin{center}
+$f(1,1) = 3
+.$
+\end{center}
+Because the value of $f$ in point 1 is greater than zero, $-f$ will be considered.
+
+\noindent
+
+The set of positive frames is: 
+\begin{center}
+$frames^{+}(f) = \{(3,4) \}$\end{center}
+The set of negative frames is: 
+\begin{center}
+$frames^{-}(f) = \{(2,1) (4,3) \}$\end{center}
+
+The positive frame, for which a separating hyperplane is searched, is $(3,4):$
+
+  \begin{table}[H]
+\begin{tabular}  { |p{2cm}|p{2cm}||p{2cm}|p{2cm}|p{2cm}| }
+ \hline
+ bound& & $p_x$& $p_y$ & $c$\\
+ \hline
+ $0$ & $<$& $     3$& $     4$& $     1$\\
+ $0$& $>$& $     2$& $     1$& $     1$\\
+ $0$& $>$& $     4$& $     3$& $     1$\\
+ \hline
+\end{tabular}
+\end{table}
+  \begin{table}[H]
+\begin{tabular}  { |p{2cm}|p{2cm}||p{2cm}|p{2cm}|p{2cm}| }
+ \hline
+ bound& & $p_x$& $p_y$ & $c$\\
+ \hline
+ $0$ & $<$& $     3$& $     4$& $     1$\\
+ $0$& $>$& $     0$& $ -1.67$& $  0.33$\\
+ $0$& $>$& $     0$& $     0$& $ -0.80$\\
+ \hline
+\end{tabular}
+\end{table}
+\begin{equation}-0.8*c < 0  \Rightarrow c > 0
+\end{equation}\begin{equation}-1.66667*p_y + 0.333333*c < 0 \Rightarrow p_y > 0.2*c\end{equation}
+\begin{equation}3*p_x + 4*p_y + 1*c > 0 \Rightarrow p_x > -1.33333*p_y - 0.333333*c\end{equation}
+
+The three inequalities constitute the solution set. Picking a value for $c$, followed by $p_y$ and then by $p_x$, will represent a hyperplane.\end{document}
